@@ -6,15 +6,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 .visuallyHidden:not(:focus):not(:active) { position: absolute; width: 1px; height: 1px; margin: -1px;border: 0;padding: 0;white-space: nowrap;clip-path: inset(100%);clip: rect(00 0 0);overflow: hidden;}
 
-/* STYLE GUIDE
-    white #FFFFFF
-    dark brown #1D0303
-    hard red #500801
-    brown #815600 
-
-    font-family: 'Petit Formal Script', cursive;
-    font-family: 'Roboto', sans-serif;   */
-
 /* BASIC STYLING */
 
 body {
@@ -118,6 +109,10 @@ header h1 {
     top: 60px;
 }
 
+.vertical-nav a {
+    padding: 0 3px;
+}
+
 .menu {
     margin-left: 80px;
 }
@@ -132,6 +127,25 @@ header h1 {
     color: #500801;
 }
 
+header .instagram:hover {
+    color: white;
+    background: radial-gradient(circle at 33% 100%, #fdf497 0%, #fdf497 2%, #fd5949 35%,#8144AF 60%,#515BD4 80%);
+    padding: 0 3px;
+    border-radius: 5px;
+}
+
+header .facebook:hover {
+    color: #3b5998;
+}
+
+header .twitter:hover {
+    color: #1dcaff;
+}
+
+header .snapchat:hover {
+    color: #FFFC00;
+}
+
 /* SECTION ONE */
 
 .container-one {
@@ -143,6 +157,10 @@ header h1 {
 .container-one img {
     float: left;
     width: 50%;
+}
+
+.container-one a:hover {
+    background-color: #815600;
 }
 
 /* SECTION TWO */
@@ -191,6 +209,10 @@ header h1 {
     font-size: 25px;
 }
 
+.container-three a:hover {
+    color: #815600;
+}
+
 /* SECTION FOUR */
 
 .container-four {
@@ -212,6 +234,10 @@ header h1 {
     width: 50%;
 }
 
+.container-four a:hover {
+    background-color: #500801;
+}
+
 /* FOOTER */
 footer {
     background-color: #500801;
@@ -226,7 +252,6 @@ footer {
 
 .footer-one {
     float: left;
-    /* width: calc(100% / 3); */
     width: 20%;
 }
 
@@ -237,7 +262,6 @@ footer {
 
 form {
     float: left;
-    /* width: calc(100% / 3); */
     width: 60%;
     padding-bottom: 0;
 }
@@ -265,7 +289,6 @@ button {
 
 .footer-three {
     float: left;
-    /* width: calc(100% / 3); */
     width: 20%;
     text-align: right;
     font-family: 'Roboto', sans-serif;
@@ -279,9 +302,35 @@ button {
     height: 10%;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*~~~~~~~ RESPONSIVE ~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 /* BREAK POINT ONE */
 
-@media (min-width: 491px) and (max-width: 1087px) {
+@media (min-width: 492px) and (max-width: 1184px) {
+
+    .container-four .image-text,
+    .container-four img {
+    width: 100%;    
+    }
+
+    footer {
+        height: 310px;
+    }
+
+    form button {
+        margin: 15px 0;
+        font-size: 30px;
+        position: relative;
+        left: 30%
+    }
+
+}
+
+/* BREAK POINT TWO */
+
+@media (min-width: 725px) and (max-width: 1087px) {
 
     .container-one {
         height: 150vh;
@@ -290,10 +339,15 @@ button {
         width: 100%;
     }
 
-    /* .container-one a {
+    .container-one a {
         position: relative;
-        right: 500px;
-    } */
+        left: 40%;
+        font-size: 20px;
+    }
+
+    .container-three a {
+        font-size: 0.9rem;
+    }
 
     .container-four .image-text,
     .container-four img {
@@ -302,6 +356,62 @@ button {
 
     .footer button {
         clear: both;
+    }
+
+}
+
+/* BREAK POINT THREE - TABLET*/
+
+@media (min-width: 491px) and (max-width: 724px) {
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .burger {
+        display: block;
+        float: right;
+        font-size: 50px;
+    }
+
+    .menu {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    .container-one {
+        height: 120vh;
+    }
+
+    .container-one img {
+        width: 100%;
+    }
+
+    .container-one a {
+        position: relative;
+        left: 40%;
+        font-size: 20px;
+    }
+
+    .container-two li:nth-child(2) {
+        display: none;
+    }
+
+    .container-two li {
+        width: calc(50% - 10px);
+        margin: 5px;
+    }
+
+    .container-three a {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        height: 50vh;
     }
 
 }
@@ -333,20 +443,32 @@ button {
         display: none;
     }
 
-    h1 {
-        float: none;
-        width: 0;
+    header h1 {
+        font-size: 50px;
+        text-align: right;
+        line-height: 55px;
+        padding-top: 120px;
+        position: relative;
+        left: 150px;
+    }
+
+    h2 {
+        font-size: 40px;
     }
 
     header {
         background-position-y: 100%;
-        height: 150vh;
+        height: 130vh;
     }
+
 
     /* MOBILE CONTAINER ONE */
 
     .container-one {
         height: 120vh;
+    }
+    .container-one h2 {
+        text-align: center;
     }
 
     .container-one img {
@@ -357,7 +479,27 @@ button {
         text-align: center;
     }
 
+    .container-one a,
+    .container-four a {
+        position: relative;
+        left: 110px;
+        font-size: 25px;
+    }
+
     /* MOBILE CONTAINER TWO */
+
+    .container-two {
+        height: 60vh;
+    }
+
+    .container-two li:nth-child(2) {
+        display: none;
+    }
+
+    .container-two li {
+        width: calc(50% - 10px);
+        margin: 5px;
+    }
 
 
     /* MOBILE CONTAINER THREE */
@@ -378,17 +520,28 @@ button {
         width: 100%;
     }
 
+    .container-four h2 {
+        text-align: center;
+    }
+
 
     /* MOBILE FOOTER */
 
     footer {
-        height: 300vh;
+        height: 80vh;
+    }
+
+    .footer-one ul {
+        position: relative;
+        left: 30px;
     }
 
     .footer-one li {
         float: left;
         text-transform: capitalize;
-        margin: 0 30px;
+        margin: 0 20px;
+        text-align: center;
+        font-size: 1.2rem;
     }
 
     .footer-one,
@@ -399,11 +552,28 @@ button {
 
     .footer-three {
         text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .footer-three h3 {
+        font-size: 40px;
+    }
+
+    .footer-two {
+        padding: 0;
     }
 
     .footer-two h2 {
         margin: 10px 0;
     }
+
+    form button {
+        position: relative;
+        left: 130px;
+        margin: 20px 0;
+        font-size: 1.8rem;
+    }
+
 
     .footer-three li {
         line-height: 30px;
@@ -411,6 +581,9 @@ button {
 
     .copyright {
         height: 20px;
+        font-size: 20px;
+        padding: 10px 0;
+        height: 50px;
     }
 
 }
